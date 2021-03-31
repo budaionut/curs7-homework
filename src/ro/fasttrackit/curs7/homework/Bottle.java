@@ -3,7 +3,7 @@ package ro.fasttrackit.curs7.homework;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 public class Bottle {
-    double totalCapacity;
+    private double totalCapacity;
     double availableLiquid;
     boolean open;
 
@@ -14,11 +14,7 @@ public class Bottle {
     }
 
     boolean hasMoreLiquid() {
-        boolean moreLiquid = false;
-        if (availableLiquid > totalCapacity) {
-            moreLiquid = true;
-        }
-        return moreLiquid;
+        return availableLiquid>0;
     }
 
     double getAvailableLiquid() {
@@ -26,11 +22,7 @@ public class Bottle {
     }
 
     boolean isEmpty() {
-        boolean empty = false;
-        if (availableLiquid == 0) {
-            empty = true;
-        }
-        return empty;
+        return availableLiquid==0;
     }
 
     void openBottle() {

@@ -30,16 +30,12 @@ public class Product {
     }
 
     boolean hasStock() {
-        boolean stock = false;
-        if (quantity > 0) {
-            stock = true;
-        }
-        return stock;
+      return quantity>0;
     }
 
     boolean isCategory(String category) {
         boolean checkCategory=false;
-        if (this.category == category){
+        if (this.category.equals(category)){
             checkCategory=true;
         }
         return checkCategory;
